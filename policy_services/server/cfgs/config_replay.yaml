@@ -1,0 +1,34 @@
+
+policy: 
+  name: replay
+  args: 
+    episode_file_path: '/mnt/nas03/robotdatas/data20240717/aloha_mobile_dummy/episode_9.hdf5'
+    repeat: True
+    observation:
+      pixel_keys: ["image_primary", "image_left_wrist","image_right_wrist"]
+      proprio_key: "proprio"
+    action:
+      horizon: 10
+      dim: 14
+      location: /observations/qpos  #使用qpos做action
+      shift: 2          #后延几个时间步, delta=true时，强制shift>=1
+      delta: true       #true:shift后时间步的值与当前时间步的值求delta; false:直接使用shift后的时间步的值
+      delta_mask: [1,1,1,1,1,1,0,1,1,1,1,1,1,0] #与元素个数为dim, 1表示这个位置的值要用delta
+
+
+service:
+  ip: '0.0.0.0'
+  port: 58051
+  workers: 10
+
+renderer:
+  enabled: false
+  ip: '0.0.0.0'
+  port: 58052
+
+robot:
+  robot_type: "ALOHA_TLR"
+  action_encoding: JOINT_POS_BIMANUAL  # Joint Delta Position (2 x [ Joint Delta Position (6) + Gripper Open/Close (1) ])
+  #action_encoding: "JOINT_POS_BIMANUAL_ABS"
+  state_encoding: "JOINT_BIMANUAL"
+  connection_keep_alive: 60 #保持存活时间，以秒为单位，过期自动清理状态. (客户端无通信后，保留机器人会话状态的最长时间.)

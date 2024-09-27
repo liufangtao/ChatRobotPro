@@ -1,0 +1,363 @@
+name: v20240906_21_tasks
+
+list:
+
+
+
+# data20240906
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240906/Place_the_3_markers_into_the_rack_ramdom
+  language_instruction: "Place the marker into the rack."
+  env: "复杂场景 + 3个马克笔随机位置"
+  task: "把桌子上的马克笔放到整理架里"
+
+
+# data20240905
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240905/Place_the_upright_3_Coke_bottle_into_the_box
+  language_instruction: "Put the Cokes on the table into the storage box and arrange them neatly."
+  env: "复杂场景 + 3个可乐 + 随机倒着或立着+ 大范围随机位置"
+  task: "把桌子上的可乐放到收纳盒里，并摆列整齐"
+
+# data20240904
+- hdf5_path: /mnt/nas03/cobot_magic_datasets/data20240904/Place_the_upright_3_Coke_bottle_into_the_box_hdf5
+  language_instruction: "Put the Cokes on the table into the storage box and arrange them neatly."
+  env: "复杂场景 + 3个可乐 + 随机倒着或立着+ 大范围随机位置"
+  task: "把桌子上的可乐放到收纳盒里，并摆列整齐"
+
+# data20240903
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240903/transfer_rubber_balls_2d_ramdom_complex_4/
+  language_instruction: Use the left arm to hold the left cup (which contains one red ball) and the right arm to hold the right cup. Pour the red ball from the left cup into the right cup. Finally, place both cups in the middle of the table.
+  env: "简单场景 + 大范围随机位置"
+  task: "用透明杯子倒小球"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240903/sweep_table_2d_ramdom_complex_4/
+  language_instruction: Use the left arm to hold the dustpan and the right arm to hold the broom. Sweep the paper scraps into the dustpan with the broom. After finishing, place the dustpan and broom in the middle position.
+  env: "简单场景 + 大范围随机位置"
+  task: "扫纸屑"
+
+# data20240902
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240902/transfer_rubber_balls_2d_ramdom/
+  language_instruction: Use the left arm to hold the left cup (which contains one red ball) and the right arm to hold the right cup. Pour the red ball from the left cup into the right cup. Finally, place both cups in the middle of the table.
+  env: "简单场景 + 大范围随机位置"
+  task: "用透明杯子倒小球"
+
+
+#data20240830
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240830/Place_the_upright_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把直立可乐放到收纳盒里（左下角）"
+
+#data20240829
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240829/Place_the_Coke_bottle_upright
+  language_instruction: "Place the Coke bottle upright."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起可乐，使它开口朝上，放到原位置附近"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240829/Place_the_upright_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把直立可乐放到收纳盒里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240829/Place_the_lyingdown_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的可乐放到框里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240829/Pick_up_the_cup_and_place_it_upright_with_the_mouth_facing_upwards
+  language_instruction: "Pick up the cup and place it upright with the mouth facing upwards."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起杯子，口朝上（放到原位置附近）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240829/Place_the_upright_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把口朝上的直立杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240829/Place_the_lyingdown_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240829/Place_the_marker_into_the_rack
+  language_instruction: "Place the marker into the rack."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把马克笔放到整理架（左中格子）"
+
+
+
+#data20240827
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240827/sweep_table_2d_ramdom/
+  language_instruction: Use the left arm to hold the dustpan and the right arm to hold the broom. Sweep the paper scraps into the dustpan with the broom. After finishing, place the dustpan and broom in the middle position.
+  env: "简单场景 + 小范围随机位置"
+  task: "扫纸屑"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240827/place_rack_and_marker_2d_ramdom/
+  language_instruction: Left arm grabs the marker, right arm grabs the pen holder and places it at the middle fixed point, finally the marker is put into the pen holder.
+  env: "复合场景（可乐+雪碧+马克笔）+ 小范围随机位置"
+  task: "收纳马克笔"
+
+  # data20240826
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240826/transfer_rubber_balls_2d_ramdom/
+  language_instruction: Use the left arm to hold the left cup (which contains one red ball) and the right arm to hold the right cup. Pour the red ball from the left cup into the right cup. Finally, place both cups in the middle of the table.
+  env: "简单场景 + 小范围随机位置"
+  task: "用透明杯子倒小球"
+
+  # data20240822
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240822/transfer_coke_2d_random
+  language_instruction: Left arm picks up the coke, passes it to the right arm, and then the right arm places it at the middle fixed point.
+  env: "简单场景 + 小范围随机位置"
+  task: "传递可乐"
+
+
+  #data20240815
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240815/Place_the_Coke_bottle_upright
+  language_instruction: "Place the Coke bottle upright."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起可乐，使它开口朝上，放到原位置附近"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240815/Place_the_upright_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把直立可乐放到收纳盒里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240815/Place_the_lyingdown_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的可乐放到框里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240815/Pick_up_the_cup_and_place_it_upright_with_the_mouth_facing_upwards
+  language_instruction: "Pick up the cup and place it upright with the mouth facing upwards."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起杯子，口朝上（放到原位置附近）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240815/Place_the_upright_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把口朝上的直立杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240815/Place_the_lyingdown_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240815/Place_the_marker_into_the_rack
+  language_instruction: "Place the marker into the rack."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把马克笔放到整理架（左中格子）"
+
+# data20240814
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240814/grab_coke_left_fixed/
+  language_instruction: Use the left arm to move the coke to the middle of the table.
+  env: "简单场景 + 固定位置"
+  task: "固定点，左手移动可乐可桌子中间"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240814/transfer_rubber_balls/
+  language_instruction: Use the left arm to hold the left cup (which contains one red ball) and the right arm to hold the right cup. Pour the red ball from the left cup into the right cup. Finally, place both cups in the middle of the table.
+  env: "简单场景 + 固定位置"
+  task: "用透明杯子倒小球"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240814/Place_the_Coke_bottle_upright
+  language_instruction: "Place the Coke bottle upright."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起可乐，使它开口朝上，放到原位置附近"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240814/Place_the_upright_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把直立可乐放到收纳盒里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240814/Place_the_lyingdown_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的可乐放到框里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240814/Pick_up_the_cup_and_place_it_upright_with_the_mouth_facing_upwards
+  language_instruction: "Pick up the cup and place it upright with the mouth facing upwards."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起杯子，口朝上（放到原位置附近）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240814/Place_the_upright_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把口朝上的直立杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240814/Place_the_lyingdown_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240814/Place_the_marker_into_the_rack
+  language_instruction: "Place the marker into the rack."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把马克笔放到整理架（左中格子）"
+
+#data20240813
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240813/transfer_rubber_balls/
+  language_instruction: Use the left arm to hold the left cup (which contains one red ball) and the right arm to hold the right cup. Pour the red ball from the left cup into the right cup. Finally, place both cups in the middle of the table.
+  env: "简单场景 + 固定位置"
+  task: "用透明杯子倒小球"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240813/Place_the_Coke_bottle_upright
+  language_instruction: "Place the Coke bottle upright."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起可乐，使它开口朝上，放到原位置附近"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240813/Place_the_upright_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把直立可乐放到收纳盒里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240813/Place_the_lyingdown_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的可乐放到框里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240813/Pick_up_the_cup_and_place_it_upright_with_the_mouth_facing_upwards
+  language_instruction: "Pick up the cup and place it upright with the mouth facing upwards."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起杯子，口朝上（放到原位置附近）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240813/Place_the_upright_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把口朝上的直立杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240813/Place_the_lyingdown_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240813/Place_the_marker_into_the_rack
+  language_instruction: "Place the marker into the rack."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把马克笔放到整理架（左中格子）"
+#data20240812
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240812/Place_the_Coke_bottle_upright
+  language_instruction: "Place the Coke bottle upright."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起可乐，使它开口朝上，放到原位置附近"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240812/Place_the_upright_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把直立可乐放到收纳盒里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240812/Place_the_lyingdown_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的可乐放到框里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240812/Pick_up_the_cup_and_place_it_upright_with_the_mouth_facing_upwards
+  language_instruction: "Pick up the cup and place it upright with the mouth facing upwards."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起杯子，口朝上（放到原位置附近）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240812/Place_the_upright_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把口朝上的直立杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240812/Place_the_lyingdown_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240812/Place_the_marker_into_the_rack
+  language_instruction: "Place the marker into the rack."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把马克笔放到整理架（左中格子）"
+#data20240809
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240809/Place_the_Coke_bottle_upright
+  language_instruction: "Place the Coke bottle upright."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起可乐，使它开口朝上，放到原位置附近"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240809/Place_the_upright_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把直立可乐放到收纳盒里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240809/Place_the_lyingdown_Coke_bottle_into_the_box
+  language_instruction: "Place the Coke bottle into the box."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的可乐放到框里（左下角）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240809/Pick_up_the_cup_and_place_it_upright_with_the_mouth_facing_upwards
+  language_instruction: "Pick up the cup and place it upright with the mouth facing upwards."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "扶起杯子，口朝上（放到原位置附近）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240809/Place_the_upright_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把口朝上的直立杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240809/Place_the_lyingdown_cup_into_the_box_upside_down
+  language_instruction: "Place the cup upside down into the storage box stacking it on top of the existing cups."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把平倒的杯子口朝下放到框子（摞在已有的杯子上）"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240809/Place_the_marker_into_the_rack
+  language_instruction: "Place the marker into the rack."
+  env: "复合场景2: 可乐+杯子+马克笔 随机位置， 收纳盒+整理架 固定位置"
+  task: "把马克笔放到整理架（左中格子）"
+
+#data20240808
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240808/sweep_table/
+  language_instruction: Use the left arm to hold the dustpan and the right arm to hold the broom. Sweep the paper scraps into the dustpan with the broom. After finishing, place the dustpan and broom in the middle position.
+  env: "简单场景 + 固定位置"
+  task: "扫纸屑"
+
+#data20240806
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240806/transfer_coke_fixed_complex_1/
+  language_instruction: Left arm picks up the coke, passes it to the right arm, and then the right arm places it at the middle fixed point.
+  env: "复合场景（可乐+雪碧+马克笔）+ 固定位置"
+  task: "传递可乐"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240806/place_rack_and_marker_fixed_complex_1/
+  language_instruction: Left arm grabs the marker, right arm grabs the pen holder and places it at the middle fixed point, finally the marker is put into the pen holder.
+  env: "复合场景（可乐+雪碧+马克笔）+ 固定位置"
+  task: "收纳马克笔"
+
+
+#data20240802
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240802/transfer_rubber_balls/
+  language_instruction: Use the left arm to hold the blue cup (which contains one red ball) and the right arm to hold the orange cup. Pour the red ball from the blue cup into the orange cup. Finally, place both cups in the middle of the table.
+  env: "简单场景 + 固定位置"
+  task: "用杯子倒小球"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240801/place_rack_and_marker_fixed/
+  language_instruction: Left arm grabs the marker, right arm grabs the pen holder and places it at the middle fixed point, finally the marker is put into the pen holder.
+  env: "简单场景 + 固定位置"
+  task: "收纳马克笔"
+
+#data20240731
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240731/transfer_coke_fixed/
+  language_instruction: Left arm picks up the coke, passes it to the right arm, and then the right arm places it at the middle fixed point.
+  env: "简单场景 + 固定位置"
+  task: "传递可乐"
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240731-1/transfer_coke_1d_random/
+  language_instruction: Left arm picks up the coke, passes it to the right arm, and then the right arm places it at the middle fixed point.
+  env: "简单场景 + 一维随机位置"
+  task: "传递可乐"
+
+
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240724/datas/grab_coke_left/
+  language_instruction: Grab the Coke with the left arm and place it at another fixed location.
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240724/datas/grab_sprite_right/
+  language_instruction: Grab the Sprite with the right arm and place it at another fixed location.
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240724/datas/place_rack_and_marker/
+  language_instruction: Use the right arm to place the organizer rack, and then use the left arm to place the marker into the rack.
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240724/datas/put_plate_into_dish_rack_right/
+  language_instruction: Use the left arm to place the plate onto the dish rack.
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240724/datas/transfer_sprite/
+  language_instruction: Use the right arm to grab the Sprite, pass it to the left arm, and then use the left arm to place the Sprite on the left side of the table.
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240724/datas/grab_drinks_both/
+  language_instruction: Use the left arm to grab the Coke, the right arm to grab the Sprite, and then place both drinks in the center of the table.
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240724/datas/put_marker_into_rack_left/
+  language_instruction: Use the left arm to place the marker into the middle fixed position in the organizer rack.
+- hdf5_path: /mnt/nas03/tmp_chatrobot/cobot_magic_datasets/data20240724/datas/transfer_coke/
+  language_instruction: Use the left arm to grab the Coke, pass it to the right arm, and then use the right arm to place the Coke on the right side of the table.
+

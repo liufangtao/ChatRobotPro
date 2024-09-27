@@ -1,0 +1,96 @@
+syntax = "proto3";  
+  
+package vla_server;  
+
+service RobotService {  
+  rpc CreateRobot(CreateRobotRequest) returns (CreateRobotResponse);
+  rpc ProcessRobotRequest (RobotRequest) returns (RobotResponse) {}  
+}
+
+enum RobotType {  
+  UNKNOWN_ROBOT = 0;  
+  ALOHA_TLR = 1;  // 代表ALOHA (top, left_wrist, right_wrist)
+  // 可以添加其他机器人类型  
+}  
+
+// 创建Robot实例的请求消息  
+message CreateRobotRequest { 
+    RobotType robot_type = 1;   
+    string description = 2;  
+    int32 keep_alive = 3; //保持存活时间，以秒为单位，过期自动清理状态
+} 
+
+// 创建Robot实例的响应消息  
+message CreateRobotResponse {  
+    string robot_id = 1;  
+} 
+
+message ImageData {  
+  string name = 1;  
+  string encode = 2;  
+  bytes data = 3; // 字节流，如 JPEG 图像数据，使用 bytes 类型来存储二进制数据  
+}  
+  
+enum StateEncoding { 
+    UNKNOWN_STATE_TYPE = 0; 
+    POS_EULER = 1;           // EEF XYZ (3) + Roll-Pitch-Yaw (3) + <PAD> (1) + Gripper Open/Close (1)
+    POS_QUAT = 2;            // EEF XYZ (3) + Quaternion (4) + Gripper Open/Close (1)
+    JOINT = 3;               // Joint Angles (7, <PAD> if fewer) + Gripper Open/Close (1)
+    JOINT_BIMANUAL = 4;      // Joint Angles (2 x [ Joint Angles (6) + Gripper Open/Close (1) ])
+}
+
+enum ActionEncoding {  
+    UNKNOWN_ACTION_TYPE = 0;  
+    EEF_POS = 1;                  // EEF Delta XYZ (3) + Roll-Pitch-Yaw (3) + Gripper Open/Close (1)
+    JOINT_POS = 2;                // Joint Delta Position (7) + Gripper Open/Close (1)
+    JOINT_POS_BIMANUAL = 3;       // Joint Delta Position (2 x [ Joint Delta Position (6) + Gripper Open/Close (1) ])
+    EEF_R6 = 4;                   // EEF Delta XYZ (3) + R6 (6) + Gripper Open/Close (1)
+    JOINT_POS_ABS = 5;            // Joint Absolute Position (7) + Gripper Open/Close (1)
+    JOINT_POS_BIMANUAL_ABS = 6;   // Joint Absolute Position (2 x [ Joint Absolute Position (6) + Gripper Open/Close (1) ])
+}  
+
+message ProprioceptionData {  
+  string name = 1;
+  StateEncoding encoding = 2; 
+  repeated double data = 3;  
+}  
+  
+message Observation {  
+  repeated ImageData images = 1;  
+  repeated ProprioceptionData proprioception = 2;  
+}  
+
+message TaskInfo {
+    optional string language_instruction = 1; 
+    optional ImageData image_instruction = 2; 
+}
+  
+message RobotRequest {  
+  string robot_id = 1;
+  Observation observation = 2;  
+  TaskInfo task = 3;
+}  
+
+message ActionData {  
+  repeated double action = 1;  
+} 
+
+message ActionResult {  
+  ActionEncoding encoding = 1; 
+  repeated ActionData actions = 2;  // actions是一个二维的数组，是为了支持action chunking
+}  
+
+enum ErrorType {  
+  SUCCESS = 0;  
+  ROBOT_NOT_EXIST = 1;
+}  
+  
+message RobotResponse {  
+  ErrorType error_code = 1;  
+  string message = 2;  
+  optional ActionResult result = 3;  
+}  
+
+
+ 
+

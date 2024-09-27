@@ -1,0 +1,76 @@
+## 采集数据 ##
+
+# 启动前检查夹爪是否关闭（合上的状态）
+# 检查机械臂是否在复位的状态
+# 启动前确保其他终端中没有执行其他有关机械臂的任务/程序
+
+# 启动机械臂摇操作
+# 打开新终端
+cd cobot_magic/remote_control
+./tools/can.sh
+# 打开新终端ee+joint
+cd cobot_magic/remote_control
+./tools/pos_remote.sh #点击“i”
+# 启动相机
+# 打开新终端
+cd cobot_magic/camera_ws
+source devel/setup.bash
+roslaunch realsense2_camera multi_camera.launch
+
+# 启动采集数据脚本
+# 打开新终端
+cd ainnovation/cobot_magic/collect_data
+conda activate aloha
+python collect_data.py --dataset_dir ~/data/data20240710
+
+# 重播数据
+python replay_data.py --dataset_dir ~/data/data20240715 --episode_idx 0
+
+
+## 推理 ##
+
+# 启动前检查夹爪是否关闭（合上的状态）
+# 检查机械臂是否在复位的状态
+# 启动前确保其他终端中没有执行其他有关机械臂的任务/程序
+
+# 启动机械臂摇操作
+# 打开新终端
+cd cobot_magic/remote_control
+./tools/can.sh
+# 打开新终端 joint
+cd cobot_magic/remote_control
+./tools/puppet.sh 
+# ee
+./tools/pos_puppet.sh 
+
+# 启动相机
+# 打开新终端
+cd cobot_magic/camera_ws
+source devel/setup.bash
+roslaunch realsense2_camera multi_camera.launch
+
+# 启动碰撞检测功能
+# 打开新终端
+cd ainnovation/cobot_magic/robot_ws
+source devel/setup.bash
+rosrun collision_detector collision_detector
+
+# 启动命令控制程序
+# 打开新终端
+cd ainnovation/cobot_magic/robot_ws
+source devel/setup.bash
+
+cd src/ros_command/scripts
+python ros_command.py
+
+# 推理
+# 启动前修改模型路径
+./vscode/launch.json
+# 在vs中启动推理脚本
+cd /ainnovation/cobot_magic/remote_control/pos_follow1
+source devel/setup.bash
+
+cobot_magic/aloha-devel/act/inference_collision.py
+
+
+rqt_image_view

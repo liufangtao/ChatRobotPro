@@ -1,0 +1,4 @@
+float64[] left      # 左机械臂关节坐标
+float64[] right     # 右机械臂关节坐标
+---
+bool result         # 是否碰撞

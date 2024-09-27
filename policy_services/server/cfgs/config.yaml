@@ -1,0 +1,44 @@
+
+policy: 
+  name: octo
+  args: 
+
+    model_path: /home/maohui/robotics/experiments/octo/checkpoints/cobot/l1head_joint_abs_v5_shift_0_v20240906_12_tasks_bs32
+    #model_step: 250000
+
+    action_smooth_window: 20
+
+    pixel_key_map:
+      image_head: head
+      image_front: front
+      image_left_wrist: left_wrist
+      image_right_wrist: right_wrist
+
+    image_resize_size:
+      image_head: [256, 256]
+      image_front: [256, 256]
+      image_left_wrist: [128, 128]
+      image_right_wrist: [128, 128]
+
+    proprio_key_map: 
+      proprio: joints_state
+
+    history_horizon: 1
+    discount: 1.0
+
+service:
+  ip: '0.0.0.0'
+  port: 50051
+  workers: 10
+
+renderer:
+  enabled: true
+  ip: '0.0.0.0'
+  port: 50052
+
+robot:
+  robot_type: "ALOHA_HFLR"
+  action_encoding: "JOINT_POS_BIMANUAL_ABS"
+  #action_encoding: JOINT_POS_BIMANUAL  # Joint Delta Position (2 x [ Joint Delta Position (6) + Gripper Open/Close (1) ])
+  state_encoding: "JOINT_BIMANUAL"
+  connection_keep_alive: 60 #保持存活时间，以秒为单位，过期自动清理状态. (客户端无通信后，保留机器人会话状态的最长时间.)

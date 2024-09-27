@@ -1,0 +1,52 @@
+#episode_file_path: /mnt/nas03/cobot_magic_datasets/data20240726/transfer_close_random_coffee/episode_67.hdf5
+episode_file_path: /mnt/nas03/cobot_magic_datasets/data20240814/transfer_rubber_balls/episode_1.hdf5
+repeat: true
+fps: 30
+
+time_step:
+  stride: 1
+  random: [0,4] #随机范围
+
+action:
+  name: action
+  encoding: JOINT_POS_BIMANUAL
+  #encoding: EEF_POS_BIMANUAL
+  dim: 14
+  #location: /observations/qpos
+  #location: /observations/arm_joints_state
+  location: /master_arm_joints_state
+  #location: /master_arm_eef_state
+  horizon: 1
+  shift: 1
+  #delta: true 
+  delta: false 
+  delta_mask: [1,1,1,1,1,1,0,1,1,1,1,1,1,0] #与元素个数为dim, 1表示这个位置的值要用delta
+  
+observations:
+  states:
+    - name: joints_state
+      location: /observations/arm_joints_state
+      dim: 14
+      encoding: JOINT_BIMANUAL
+      doc: 'Robot joint pos (two arms + grippers).'
+    - name: eef_state
+      location: /observations/arm_eef_state
+      dim: 14
+      encoding: POS_EULER_BIMANUAL
+      doc: 'Robot eef states (two arms + grippers).'
+
+  images:
+    image_size: [480,640,3]
+    list:
+    - name: head
+      location: /observations/images/camera_5_rgb_head
+      doc: 'head camera RGB observation.'
+    - name: front
+      location: /observations/images/camera_3_rgb_front
+      doc: 'front camera RGB observation.'
+    - name: left_wrist
+      location: /observations/images/camera_1_rgb_left
+      doc: 'Left wrist camera RGB observation.'
+    - name: right_wrist
+      location: /observations/images/camera_2_rgb_right
+      doc: 'Right wrist camera RGB observation.'

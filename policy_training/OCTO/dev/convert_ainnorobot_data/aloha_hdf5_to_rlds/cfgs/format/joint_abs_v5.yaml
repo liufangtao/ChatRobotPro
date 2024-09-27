@@ -1,0 +1,39 @@
+name: joint_abs_v5
+actions:
+  - name: action
+    dim: 14
+    #location: /observations/arm_joints_state  #使用qpos做action
+    location: /master_arm_joints_state  #使用主动臂状态做action
+    shift: 0          #后延几个时间步, delta=true时，强制shift>=1
+    delta: false       #true:shift后时间步的值与当前时间步的值求delta; false:直接使用shift后的时间步的值
+    delta_mask: [1,1,1,1,1,1,0,1,1,1,1,1,1,0] #与元素个数为dim, 1表示这个位置的值要用delta
+    doc: 'Robot action for joints in two arms + grippers.'
+
+observations:
+  states:
+    - name: joints_state
+      location: /observations/arm_joints_state
+      dim: 14
+      doc: 'Robot joint pos (two arms + grippers).'
+
+    - name: eef_state
+      location: /observations/arm_eef_state
+      dim: 14
+      doc: 'Robot eef pos (two arms + grippers).'
+
+  images:
+    image_size: [480,640,3]
+    image_encoding: jpeg
+    list:
+    - name: head
+      location: /observations/images/camera_5_rgb_head
+      doc: 'Head camera RGB observation.'
+    - name: front
+      location: /observations/images/camera_3_rgb_front
+      doc: 'Front camera RGB observation.'
+    - name: left_wrist
+      location: /observations/images/camera_1_rgb_left
+      doc: 'Left wrist camera RGB observation.'
+    - name: right_wrist
+      location: /observations/images/camera_2_rgb_right
+      doc: 'Right wrist camera RGB observation.'

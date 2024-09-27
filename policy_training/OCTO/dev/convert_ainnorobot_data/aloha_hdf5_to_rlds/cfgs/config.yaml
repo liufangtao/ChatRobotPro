@@ -1,0 +1,22 @@
+
+defaults:
+  - source: ""
+  - format: ""
+  #- source: 
+  #  - v20240806_2_tasks
+  #  - v20240801_2_task
+  #  - v20240731_1_task
+
+overwrite: false
+workers: 10
+
+dataset:
+  name: ${format.name}_shift_${format.actions.0.shift}_${source.name}
+  #name: ${format.name}_shift_${format.actions.0.shift}_5tasks
+  #output_dir: /home/maohui/data/robotics/data/cobot
+  output_dir: /home/maohui/robotics/data/cobot
+  source: ${source.list}
+  actions: ${format.actions}
+  observations: ${format.observations}
+
+abstract: "name=${dataset.name}, ActionType=${format.name}, action=${format.actions.0.location}, shift=${format.actions.0.shift}"

@@ -1,0 +1,18 @@
+bc_dataset:
+  _target_: read_data.aloha.BCDataset
+  path: "${root_dir}/expert_demos/${data_fold}"
+  # suite: ${suite.task.suite}
+  # scenes: ${suite.task.scenes}
+  tasks: ${suite.task.tasks}
+  num_demos_per_task: ${num_demos_per_task}
+  obs_type: ${obs_type}
+  history: ${suite.history}
+  history_len: ${suite.history_len}
+  prompt: ${prompt}
+  temporal_agg: ${temporal_agg}
+  num_queries: ${num_queries}
+  subsample: 10
+  prop_use_joints: true
+  env_is_joints: true
+  store_actions: true
+  pixel_keys: ${suite.pixel_keys}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>MJPEG Stream</title>  
+</head>  
+<body>  
+    <h1>MJPEG Stream</h1>  
+    <img id="videoStream" src="" alt="Video Stream">  
+    <script>  
+        function updateStream() {  
+            const img = document.getElementById('videoStream');  
+            img.src = '/video_feed?' + new Date().getTime(); // 添加时间戳以绕过浏览器缓存  
+            setTimeout(updateStream, 100); // 每100毫秒更新一次  
+        }  
+        updateStream();  
+    </script>  
+</body>  
+</html>
